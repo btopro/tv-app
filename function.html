@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App - From Web to Lit Elements</title>
+
+    <!-- Link For Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Shoe Lace Button -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="flex">
+
+        <div class="flex left-nav">
+
+            <i class='bx bx-menu'></i>
+            
+            <h3 class="web_title">From Web Component to Lit Elements</h3>
+            
+        </div>
+
+
+        <div class="flex right-nav">
+
+            <div class="flex remain-time">
+                <i class='bx bx-time-five'></i>
+                43 mins remaining
+            </div>
+
+            <button class="flex language-specifier">
+                <i class='bx bx-globe' ></i>
+                Language
+                <i class='bx bx-caret-down' id="lang-carret-icon"></i>
+                <ul class="flex language-menu">
+                    <li>English</li>   
+                    <li>Deutsch</li>   
+                    <li>Español</li>   
+                    <li>Français</li>   
+                    <li>Indonesia</li>   
+                </ul>
+            </button>
+
+            <div class="flex account">
+                <div class="flex letter">A</div>
+            </div>
+ 
+        </div>
+
+        <div class="navbar">
+            <ul class="flex">
+
+                <i class='bx bx-x' id="nav-close"></i>
+
+                <div class="flex remain-time response-remian-time">
+                    <i class='bx bx-time-five'></i>
+                    43 mins remaining
+                </div>
+                <a href="index.html" class="flex  filled">
+                    <span>1</span>
+                    <p>Introduction</p>
+                </a>
+                <a href="setup.html" class="flex filled">
+                    <span>2</span>
+                    <p>Getting setup and Exploring the Background</p>
+                </a>
+                <a href="customelement.html" class="flex filled">
+                    <span>3</span>
+                    <p>Define a Custom Element</p>
+                </a>
+                <a href="shadow.html" class="flex filled">
+                    <span>4</span>
+                    <p>Shadow DOM</p>
+                </a>
+                <a href="htmltemp.html" class="flex filled">
+                    <span>5</span>
+                    <p>HTML Templates</p>
+                </a>
+                <a href="function.html" class="flex filled current">
+                    <span>6</span>
+                    <p>Adding Functionality</p>
+                </a>
+                <a href="lit.html" class="flex">
+                    <span>7</span>
+                    <p>Lit HTML</p>
+                </a>
+                <a href="litElement.html" class="flex">
+                    <span>8</span>
+                    <p>Lit Element</p>
+                </a>
+                <a href="congratulation.html" class="flex">
+                    <span>9</span>
+                    <p>Congratulations</p>
+                </a>
+
+                <a href="" class="flex">
+                    <i class='bx bxs-bug' ></i>
+                    <p>Report a mistake</p>
+                </a>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="flex main-container-wrapper">
+
+        <div class="buttons">
+            <a href="htmltemp.html"><sl-button variant="default" size="medium">Back</sl-button></a>
+            <a href="lit.html"> <sl-button variant="primary" size="medium">Next</sl-button></a>
+        </div>
+
+        <div class="flex main-section">
+
+            <h2>6. Adding Functionality</h2>
+
+            <h3 class="element-heading">Property Bindings</h3>
+
+            <p>
+                Currently, the only way to set the <code>rating</code> on the rating-element is to construct the element, set the rating property on the object, and then put it on the page. Unfortunately, this is not how native HTML elements tend to work. Native HTML elements tend to update with both property and attribute changes.
+            </p>
+
+            <p>
+                Make the custom element update the view when the <code>rating</code> property changes by adding the following lines:
+            </p>
+
+            <a href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICA8L2hlYWQ-XG4gIDxib2R5PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiZG9jdW1lbnQuYm9keS5pbm5lckhUTUwgPSAnPGRpdj5UaGlzIHBhZ2UgaGFzIHN1Y2Nlc3NmdWxseSBsb2FkZWQhPC9kaXY-JzsifSx7Im5hbWUiOiJ0aHVtYl9kb3duLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-In0seyJuYW1lIjoidGh1bWJfdXAuc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz4ifV0" target="_blank"><sl-button variant="primary">Code Checkpoint</sl-button></a>
+
+            <h4>index.js</h4>
+
+            <p>
+                You add a setter and getter for the rating property, and then you update the rating element's text if it's available. This means if you were to set the rating property on the element, the view will update; give it a quick test in your Dev Tools console!
+            </p>
+
+            <h3 class="element-heading">Attribute Bindings</h3>
+
+            <p>
+                Now, update the view when the attribute changes; this is similar to an input updating its view when you set <code> &lt;input value="newValue"&gt;</code>. Luckily, the Web Component lifecycle includes the attributeChangedCallback. Update the rating by adding the following lines:
+            </p>
+
+            <h3 class="element-heading">Attribute Bindings</h3>
+
+            <p>
+                Now, update the view when the attribute changes; this is similar to an input updating its view when you set <code> &lt;input value="newValue"&gt;</code>. Luckily, the Web Component lifecycle includes the <code>attributeChangedCallback</code>. Update the rating by adding the following lines:
+            </p>
+
+            <h4>index.js</h4>
+
+            <p>
+                In order for the <code>attributeChangedCallback</code> to trigger, you must set a static getter for <code>RatingElement.observedAttributes which defines the attributes to be observed for changes</code>. You then set the rating declaratively in the DOM. Give it a try:
+            </p>
+
+            <h4>index.html</h4>
+
+            <p>The rating should now be updating declaratively!</p>
+
+            <h3 class="element-heading">Button Functionality</h3>
+
+            <p>
+                Now all that's missing is the button functionality. The behavior of this component should allow the user to provide a single up or down vote rating and give visual feedback to the user. You can implement this with some event listeners and a reflecting property, but first update the styles to give visual feedback by appending the following lines:
+            </p>
+
+            <aside class="warning">
+                <p>
+                    Note, this is not the most-efficient way of writing this, but it is meant to exemplify how state works on a web component.
+                </p>
+            </aside>
+
+            <p>
+                Congratulations, you now have a fully-featured Web Component; try clicking on some buttons! The issue now is that my JS file is now reaching 96 lines, my HTML file 43 lines, and the code is quite verbose and imperative for such a simple component. This is where Google's Lit project comes in!
+            </p>
+
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Shoe Lace Button -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>

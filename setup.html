@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App - From Web to Lit Elements</title>
+
+    <!-- Link For Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Shoe Lace Button -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="flex">
+
+        <div class="flex left-nav">
+
+            <i class='bx bx-menu'></i>
+            
+            <h3 class="web_title">From Web Component to Lit Elements</h3>
+            
+        </div>
+
+
+        <div class="flex right-nav">
+
+            <div class="flex remain-time">
+                <i class='bx bx-time-five'></i>
+                43 mins remaining
+            </div>
+
+            <button class="flex language-specifier">
+                <i class='bx bx-globe' ></i>
+                Language
+                <i class='bx bx-caret-down' id="lang-carret-icon"></i>
+                <ul class="flex language-menu">
+                    <li>English</li>   
+                    <li>Deutsch</li>   
+                    <li>Español</li>   
+                    <li>Français</li>   
+                    <li>Indonesia</li>   
+                </ul>
+            </button>
+
+            <div class="flex account">
+                <div class="flex letter">A</div>
+            </div>
+ 
+        </div>
+
+        <div class="navbar">
+            <ul class="flex">
+
+                <i class='bx bx-x' id="nav-close"></i>
+
+                <div class="flex remain-time response-remian-time">
+                    <i class='bx bx-time-five'></i>
+                    43 mins remaining
+                </div>
+                <a href="index.html" class="flex filled">
+                    <span>1</span>
+                    <p>Introduction</p>
+                </a>
+                <a href="setup.html" class="flex current filled">
+                    <span>2</span>
+                    <p>Getting setup and Exploring the Background</p>
+                </a>
+                <a href="customelement.html" class="flex">
+                    <span>3</span>
+                    <p>Define a Custom Element</p>
+                </a>
+                <a href="shadow.html" class="flex">
+                    <span>4</span>
+                    <p>Shadow DOM</p>
+                </a>
+                <a href="htmltemp.html" class="flex">
+                    <span>5</span>
+                    <p>HTML Templates</p>
+                </a>
+                <a href="function.html" class="flex">
+                    <span>6</span>
+                    <p>Adding Functionality</p>
+                </a>
+                <a href="lit.html" class="flex">
+                    <span>7</span>
+                    <p>Lit HTML</p>
+                </a>
+                <a href="litElement.html" class="flex">
+                    <span>8</span>
+                    <p>Lit Element</p>
+                </a>
+                <a href="congratulation.html" class="flex">
+                    <span>9</span>
+                    <p>Congratulations</p>
+                </a>
+
+                <a href="" class="flex">
+                    <i class='bx bxs-bug' ></i>
+                    <p>Report a mistake</p>
+                </a>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="flex main-container-wrapper">
+
+        <div class="buttons">
+            <a href="index.html"><sl-button variant="default" size="medium">Back</sl-button></a>
+            <a href="customelement.html"> <sl-button variant="primary" size="medium">Next</sl-button></a>
+        </div>
+
+        <div class="flex main-section">
+
+            <h2>2. Getting set up & exploring the Playground</h2>
+
+            <h3 class="element-heading">Accessing the code</h3>
+
+            <p>
+                Throughout the codelab there will be links to the Lit playground like this:
+            </p>
+
+            <a href="https://lit.dev/playground/#project=W3siY29udGVudCI6IjwhZG9jdHlwZSBodG1sPlxuPGhlYWQ-XG48L2hlYWQ-XG48Ym9keT5cbiAgPGRpdj5IZWxsbyBXb3JsZCE8L2Rpdj5cbjwvYm9keT5cbiIsIm5hbWUiOiJpbmRleC5odG1sIn1d" target="_blank">
+                <sl-button variant="primary">Code Checkpoint</sl-button>
+            </a>
+
+            <p>
+                The playground is a code sandbox that runs completely in your browser. It can compile and run TypeScript and JavaScript files, and it can also automatically resolve imports to node modules. e.g.
+            </p>
+
+            <code class="flex code">
+                <p class="comment">// before</p>
+                <p>import './my-file.js';</p>
+                <p>import 'lit';</p>
+                
+                <p class="comment">// after</p>
+                <p>import './my-file.js';</p>
+                <p>import 'https://unpkg.com/lit?module';</p>
+            </code>
+
+            <p>
+                You can do the entire tutorial in the Lit playground, using these checkpoints as starting points. If you're using VS Code, you can use these checkpoints to download the starting code for any step, as well as using them to check your work.
+            </p>
+
+            <h3 class="element-heading">Exploring the lit playground UI</h3>
+
+            <img src="Images/1.png" alt="">
+
+            <p>
+                The Lit playground UI screenshot highlights sections that you'll use in this codelab.
+            </p>
+
+            <ol class="bullet-points">
+                <li><p>File selector. Note the plus button...</p></li>
+                <li><p>File editor.</p></li>
+                <li><p>Code preview.</p></li>
+                <li><p>Reload button.</p></li>
+                <li><p>Download button.</p></li>
+            </ol>
+
+            <aside class="success">
+                <p>
+                    You can also use <code>ctrl + s (cmd + s</code> for Mac) to save your progress as a URL. This will allow you to reload the page and not lose your progress or share your code with others.
+                </p>
+            </aside>
+
+            <h3 class="element-heading">VS Code setup (Advanced)</h3>
+            
+            <aside class="warning">
+                <p>
+                    If you intend to run this codelab entirely in the browser, you can skip this step.
+                </p>
+            </aside>
+
+            <p>
+                Here are the benefits to using this VS Code setup:
+            </p>
+
+            <ul class="bullet-points">
+                <li><p>Template type checking</li>
+                <li><p>Template intellisense & autocompletion</li>
+            </ul>
+
+            <p>
+                If you have NPM, VS Code (with the <a href="https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin" target="_blank">lit-plugin</a> plugin) installed already and know how to use that environment, you may simply download and start these projects by doing the following:
+            </p>
+
+            <ul class="bullet-points">
+                <li><p>Press the download button</p></li>
+                <li><p>Extract the tar file's contents into a directory</p></li>
+                <li><p>Install a dev server that can resolve bare module specifiers (the Lit team recommends @web/dev-server)</p></li>
+                <li class="marginal-li-tag"><p>Here is an example <code><a href="https://gist.github.com/e111077/c9d4512dcc35f483abbebf95da24609b" target="_blank">package.json</a></code></p></li>
+                <li><p>Run the dev server and open your browser (if you are using <code>@web/dev-server</code> you can use npx <code>web-dev-server --node-resolve --watch --open</code>)</p></li>
+                <li class="marginal-li-tag"><p>If you are using the example <code>package.json</code> use <code>npm run server</code></p></li>
+            </ul>
+
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Shoe Lace Button -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>

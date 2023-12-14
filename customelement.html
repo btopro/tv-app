@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App - From Web to Lit Elements</title>
+
+    <!-- Link For Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Shoe Lace Button -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="flex">
+
+        <div class="flex left-nav">
+
+            <i class='bx bx-menu'></i>
+            
+            <h3 class="web_title">From Web Component to Lit Elements</h3>
+            
+        </div>
+
+
+        <div class="flex right-nav">
+
+            <div class="flex remain-time">
+                <i class='bx bx-time-five'></i>
+                43 mins remaining
+            </div>
+
+            <button class="flex language-specifier">
+                <i class='bx bx-globe' ></i>
+                Language
+                <i class='bx bx-caret-down' id="lang-carret-icon"></i>
+                <ul class="flex language-menu">
+                    <li>English</li>   
+                    <li>Deutsch</li>   
+                    <li>Español</li>   
+                    <li>Français</li>   
+                    <li>Indonesia</li>   
+                </ul>
+            </button>
+
+            <div class="flex account">
+                <div class="flex letter">A</div>
+            </div>
+ 
+        </div>
+
+        <div class="navbar">
+            <ul class="flex">
+
+                <i class='bx bx-x' id="nav-close"></i>
+
+                <div class="flex remain-time response-remian-time">
+                    <i class='bx bx-time-five'></i>
+                    43 mins remaining
+                </div>
+                <a href="index.html" class="flex filled">
+                    <span>1</span>
+                    <p>Introduction</p>
+                </a>
+                <a href="setup.html" class="flex filled">
+                    <span>2</span>
+                    <p>Getting setup and Exploring the Background</p>
+                </a>
+                <a href="customelement.html" class="flex current filled">
+                    <span>3</span>
+                    <p>Define a Custom Element</p>
+                </a>
+                <a href="shadow.html" class="flex">
+                    <span>4</span>
+                    <p>Shadow DOM</p>
+                </a>
+                <a href="htmltemp.html" class="flex">
+                    <span>5</span>
+                    <p>HTML Templates</p>
+                </a>
+                <a href="function.html" class="flex">
+                    <span>6</span>
+                    <p>Adding Functionality</p>
+                </a>
+                <a href="lit.html" class="flex">
+                    <span>7</span>
+                    <p>Lit HTML</p>
+                </a>
+                <a href="litElement.html" class="flex">
+                    <span>8</span>
+                    <p>Lit Element</p>
+                </a>
+                <a href="congratulation.html" class="flex">
+                    <span>9</span>
+                    <p>Congratulations</p>
+                </a>
+
+                <a href="" class="flex">
+                    <i class='bx bxs-bug' ></i>
+                    <p>Report a mistake</p>
+                </a>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="flex main-container-wrapper">
+
+        <div class="buttons">
+            <a href="setup.html"><sl-button variant="default" size="medium">Back</sl-button></a>
+            <a href="shadow.html"> <sl-button variant="primary" size="medium">Next</sl-button></a>
+        </div>
+
+        <div class="flex main-section">
+
+            <h2>3. Define A Custom Element</h2>
+
+            <h3 class="element-heading">Custom Elements</h3>
+
+            <p>
+                Web Components are a collection of 4 native web APIs. They are:
+            </p>
+
+            <ul class="bullet-points">
+                <li><p>ES Modules</p></li>
+                <li><p>Custom Elements</p></li>
+                <li><p>Shadow DOM</p></li>
+                <li><p>HTML Templates</p></li>
+            </ul>
+
+            <p>
+                You've already used the ES modules specification, which allows you to create javascript modules with imports and exports that are loaded into the page with <code> &lt;script type="module"&gt;</code>
+            </p>
+
+            <h3 class="element-heading">Defining a Custom Element Code Checkpoint</h3>
+
+            <a href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICA8L2hlYWQ-XG4gIDxib2R5PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiZG9jdW1lbnQuYm9keS5pbm5lckhUTUwgPSAnPGRpdj5UaGlzIHBhZ2UgaGFzIHN1Y2Nlc3NmdWxseSBsb2FkZWQhPC9kaXY-JzsifSx7Im5hbWUiOiJ0aHVtYl9kb3duLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-In0seyJuYW1lIjoidGh1bWJfdXAuc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz4ifV0" target="_blank"><sl-button variant="primary">Code Checkpoint</sl-button></a>
+
+            <p>
+                The Custom Elements specification lets users define their own HTML elements using JavaScript. The names must contain a hyphen ( <code>-</code> ) to differentiate them from native browser elements. Clear the <code>index.js</code> file and define a custom element class:
+            </p>
+
+            <h4>index.js</h4>
+
+            <code class="flex code">
+                <p>class RatingElement extends HTMLElement {}</p>
+                <p></p>
+                <p>customElements.define('rating-element', RatingElement);</p>
+            </code>
+
+            <p>
+                A custom element is defined by associating a class that extends <code>HTMLElement</code> with a hyphenated tag name. The call to <code>customElements.define</code> tells the browser to associate the class <code>RatingElement</code> with the tagName <code>‘rating-element'</code>. This means that every element in your document with the name <code>&lt;rating-element&gt;</code> will be associated with this class.
+            </p>
+
+            <aside class="warning">
+                <p>
+                    Since <code>customElements.define</code> has a global scope, you cannot currently call it more than once for the same tag name even if the same class definition is given.
+                </p>
+            </aside>
+
+            <p>Place a <code>&lt;rating-element&gt;</code> in the document body and see what renders.</p>
+
+            <h4>index.html</h4>
+
+            <code class="flex code">
+                <p>&lt;body&gt;</p>
+                <p>&nbsp;&nbsp;&lt;rating-element&gt;&lt;/rating-element&gt;</p>
+                <p>&lt;/body&gt;</p>
+            </code>
+
+            <p>
+                Now, looking at the output, you'll see that nothing has rendered. This is expected, because you haven't told the browser how to render <code>&lt;rating-element&gt;</code>. You can confirm that the Custom Element definition has succeeded by selecting the <code>&lt;rating-element&gt;</code> in Chrome Dev Tools' element selector and, in the console, calling:
+            </p>
+
+            <code class="flex code">
+                <p>$0.constructor</p>
+            </code>
+
+            <p>Which should output:</p>
+
+            <code class="flex code">
+                <p>class RatingElement extends HTMLElement {}</p>
+            </code>
+
+            <h3 class="element-heading">Custom Element Lifecycle</h3>
+
+            <p>Custom Elements come with a set of lifecycle hooks. They are:</p>
+
+            <ul class="bullet-points">
+                <li><p><code>constructor</code></p></li>
+                <li><p><code>connectedCallback</code></p></li>
+                <li><p><code>disconnectedCallback</code></p></li>
+                <li><p><code>attributeChangedCallback</code></p></li>
+                <li><p><code>adoptedCallback</code></p></li>
+            </ul>
+
+            <p>
+                The <code>constructor</code> is called when the element is first created: for example, by calling<br>
+                <code>document.createElement(‘rating-element')</code> or <code>new RatingElement()</code>. The constructor is a good place to set up your element, but it is typically considered bad practice to do DOM manipulations in the constructor for element "boot-up" performance reasons.
+            </p>
+
+            <p>
+                The <code>connectedCallback</code> is called when the custom element is attached to the DOM. This is typically where initial DOM manipulations happen.
+            </p>
+
+            <p>
+                The <code>disconnectedCallback</code> is called after the custom element is removed from the DOM.
+            </p>
+
+            <p>
+                The <code>attributeChangedCallback(attrName, oldValue, newValue)</code> is called when any of the user-specified attributes change.
+            </p>
+
+            <p>
+                The <code>adoptedCallback</code> is called when the custom element is adopted from another <code>documentFragment</code> into the main document via <code>adoptNode</code> such as in <code>HTMLTemplateElement</code>.
+            </p>
+
+            <h3 class="element-heading">Render DOM</h3>
+
+            <p>
+                Now, return to the custom element and associate some DOM with it. Set the element's content when it gets attached to the DOM:
+            </p>
+
+            <h4>index.js</h4>
+
+            <code class="flex code">
+                <p>class RatingElement extends HTMLElement {</p>
+                <p>&nbsp;&nbsp;constructor() {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;super();</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;this.rating = 0;</p>
+                <p>&nbsp;&nbsp;}</p>
+                <p>&nbsp;&nbsp;connectedCallback() {</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;this.innerHTML = `</p>
+                <p class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Internal Content</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;`;</p>
+                <p>&nbsp;&nbsp;}</p>
+                <p>}</p>
+                <p>&nbsp;</p>
+                <p>customElements.define('rating-element', RatingElement);</p>
+            </code>
+
+            <p>
+                In the <code>constructor</code>, you store an instance property called <code>rating</code> on the element. In the <code>connectedCallback</code>, you add DOM children to <code>&lt;rating-element&gt;</code> to display the current rating, together with thumbs up and thumbs down buttons.
+            </p>
+
+            <aside class="warning">
+                <p>
+                    Please note that for the sake of example, you are not following accessibility best practices for these controls and inputs.
+                </p>
+            </aside>
+
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Shoe Lace Button -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

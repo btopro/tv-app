@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App - From Web to Lit Elements</title>
+
+    <!-- Link For Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Shoe Lace Button -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="flex">
+
+        <div class="flex left-nav">
+
+            <i class='bx bx-menu'></i>
+            
+            <h3 class="web_title">From Web Component to Lit Elements</h3>
+            
+        </div>
+
+
+        <div class="flex right-nav">
+
+            <div class="flex remain-time">
+                <i class='bx bx-time-five'></i>
+                43 mins remaining
+            </div>
+
+            <button class="flex language-specifier">
+                <i class='bx bx-globe' ></i>
+                Language
+                <i class='bx bx-caret-down' id="lang-carret-icon"></i>
+                <ul class="flex language-menu">
+                    <li>English</li>   
+                    <li>Deutsch</li>   
+                    <li>Español</li>   
+                    <li>Français</li>   
+                    <li>Indonesia</li>   
+                </ul>
+            </button>
+
+            <div class="flex account">
+                <div class="flex letter">A</div>
+            </div>
+ 
+        </div>
+
+        <div class="navbar">
+            <ul class="flex">
+
+                <i class='bx bx-x' id="nav-close"></i>
+
+                <div class="flex remain-time response-remian-time">
+                    <i class='bx bx-time-five'></i>
+                    43 mins remaining
+                </div>
+                <a href="index.html" class="flex  filled">
+                    <span>1</span>
+                    <p>Introduction</p>
+                </a>
+                <a href="setup.html" class="flex filled">
+                    <span>2</span>
+                    <p>Getting setup and Exploring the Background</p>
+                </a>
+                <a href="customelement.html" class="flex filled">
+                    <span>3</span>
+                    <p>Define a Custom Element</p>
+                </a>
+                <a href="shadow.html" class="flex filled">
+                    <span>4</span>
+                    <p>Shadow DOM</p>
+                </a>
+                <a href="htmltemp.html" class="flex filled current">
+                    <span>5</span>
+                    <p>HTML Templates</p>
+                </a>
+                <a href="function.html" class="flex">
+                    <span>6</span>
+                    <p>Adding Functionality</p>
+                </a>
+                <a href="lit.html" class="flex">
+                    <span>7</span>
+                    <p>Lit HTML</p>
+                </a>
+                <a href="litElement.html" class="flex">
+                    <span>8</span>
+                    <p>Lit Element</p>
+                </a>
+                <a href="congratulation.html" class="flex">
+                    <span>9</span>
+                    <p>Congratulations</p>
+                </a>
+
+                <a href="" class="flex">
+                    <i class='bx bxs-bug' ></i>
+                    <p>Report a mistake</p>
+                </a>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="flex main-container-wrapper">
+
+        <div class="buttons">
+            <a href="shadow.html"><sl-button variant="default" size="medium">Back</sl-button></a>
+            <a href="function.html"> <sl-button variant="primary" size="medium">Next</sl-button></a>
+        </div>
+
+        <div class="flex main-section">
+
+            <h2>5. HTML Templates</h2>
+
+            <h3 class="element-heading">Why Templates</h3>
+
+            <p>
+                Using <code>innerHTML</code> and template literal strings with no sanitization may cause security issues with script injection. Methods in the past have included using <code>DocumentFragments</code>, but these also come with other issues such as images loading and scripts running when the templates are defined as well as introducing obstacles for reusability. This is where the <code>&lt;template&gt;</code> element comes in; templates provide inert DOM, a highly performant method to clone nodes, and reusable templating.
+            </p>
+
+            <h3 class="element-heading">Using Templates</h3>
+
+            <p>
+                Next, transition the component to use HTML Templates:
+            </p>
+
+            <a href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICA8L2hlYWQ-XG4gIDxib2R5PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiZG9jdW1lbnQuYm9keS5pbm5lckhUTUwgPSAnPGRpdj5UaGlzIHBhZ2UgaGFzIHN1Y2Nlc3NmdWxseSBsb2FkZWQhPC9kaXY-JzsifSx7Im5hbWUiOiJ0aHVtYl9kb3duLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-In0seyJuYW1lIjoidGh1bWJfdXAuc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz4ifV0" target="_blank"><sl-button variant="primary">Code Checkpoint</sl-button></a>
+
+            
+            <h4>index.html</h4>
+
+            <code class="flex code">
+                <p class="comment">&lt;!DOCTYPE html&gt;</p>
+                <p>&lt;head&gt;</p>
+                <p>&nbsp;&nbsp;&lt;script src="./index.js" type="module"&gt;&lt;/script &gt;</p>
+                <p>&nbsp;&nbsp;&lt;style&gt;</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;span{</p>
+                <p class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid red;</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                <p>&nbsp;&nbsp;&lt;/style&gt;</p>
+                <p>&lt;/head&gt;</p>
+                <p>&lt;body&gt;</p>
+                <p class="comment">&nbsp;&nbsp;&lt;rating-element&gt;&lt;/rating-element&gt;</p>
+                <p>&lt;/body&gt;</p>
+            </code>
+
+            <p>
+                Here you moved the DOM content into a template tag in the main document's DOM. Now refactor the custom element definition:
+            </p>
+
+            <h4>index.js</h4>
+
+            <code class="flex code">
+                <p>class RatingElement extends HTMLElement {</p>
+                <p>&nbsp;&nbsp;constructor() {</p>    
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;super();</p>    
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;this.rating = 0;</p>    
+                <p>&nbsp;&nbsp;}</p>    
+                <p>&nbsp;&nbsp;connectedCallback() {</p>  
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;const shadowRoot = this.attachShadow({mode: 'open'});</p>   
+                <p>&nbsp;&nbsp;}</p>    
+                <p>}</p>
+                <p>&nbsp;</p>
+                <p>customElements.define('rating-element', RatingElement);</p>
+            </code>
+
+            <p>
+                To use this template element, you query the template, get it's contents, and clone those nodes with <code>templateContent.cloneNode</code> where the <code>true</code> argument performs a deep clone. You then initialize the dom with the data.
+            </p>
+
+            <p>
+                Congratulations, you now have a Web Component! Unfortunately it does not do anything yet, so next, add some functionality.
+            </p>
+
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Shoe Lace Button -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/shoelace-autoloader.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
